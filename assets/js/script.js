@@ -11,7 +11,7 @@ window.addEventListener("scroll", function () {
 function confirmRedirect() {
   if (
     confirm(
-      "Sorry right n0w form not acceptable.\nplease click OK Button you redirect to our WhatsApp."
+      "Sorry currently form not acceptable.\nplease click OK Button you redirect to our WhatsApp."
     )
   ) {
     window.location.href = "https://wa.me/9111514114";
