@@ -1,0 +1,460 @@
+:root{
+    --primary-color: #e056fd;
+    --primary-color-hover: #ae07cf;
+    --white: #fff;
+    --black: #000;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  padding-top: 100px;
+  background-color: var(--black);
+  color: var(--white);
+}
+/* btn css here */
+.btn {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  border: 1px solid #ffffff5b;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+.btn-primary1 {
+  background: linear-gradient(180deg, var(--primary-color), transparent);
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary1:hover,
+.btn-primary1:focus {
+  background: linear-gradient(0deg, var(--primary-color), transparent);
+  transition: 0.3s;
+  border: 1px solid #ffffff5b;
+  color: var(--white);
+}
+
+.social-btn {
+  margin-top: 16px;
+}
+
+/* common css here */
+.fs-14{font-size: 14px;}
+
+/* navbar css start here */
+.custom-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: var(--black);
+}
+.custom-nav.scrolled{
+    border-bottom: 1px solid var(--primary-color);
+}
+a.navbar-brand {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+}
+.custom-nav.navbar ul > li > a {
+  color: var(--primary-color);
+  position: relative;
+  font-size: 16px;
+  text-transform: capitalize;
+  margin: 0 4px;
+}
+.custom-nav.navbar ul > li > a::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  width: 0;
+  content: "";
+  background-color: var(--primary-color);
+  transition: all 0.3s ease-in;
+}
+.custom-nav.navbar ul > li > a:hover,
+.custom-nav.navbar ul > li > a.active {
+  color: var(--primary-color-hover);
+}
+.custom-nav.navbar ul > li > a:hover::before,
+.custom-nav.navbar ul > li > a.active::before {
+  width: 100%;
+}
+.custom-nav .nav-pills .nav-link.active {
+  background-color: transparent;
+}
+
+.toggle-btn{display: none;}
+.bar1, .bar2, .bar3 {
+  width: 30px;
+  height: 3px;
+  background-color: var(--white);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  transform: translate(0, 7px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+
+/* /navbar css end ehere */
+
+/* section css start here */
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+section h1{
+    text-shadow: 2px 1px var(--primary-color);
+}
+section h2 {
+  margin-bottom: 1rem;
+}
+section h2 span{
+    color: var(--primary-color);
+}
+/* section css end here */
+
+
+/* image container css start here */
+.image-container {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(45deg, var(--black)000, rgb(224, 86, 253));
+  border: 2px solid rgb(224, 86, 253);
+  border-radius: 100%;
+  margin: auto;
+  /* box-shadow: rgba(224, 86, 253, 0.5) 0px 50px 100px -20px,
+    rgba(224, 86, 253, 0.3) 0px 30px 60px -30px; */
+    box-shadow: 5px 5px 100px 0px var(--primary-color-hover);
+  overflow: hidden;
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  transform: scale(1.5);
+  margin-top: 50px;
+}
+/* image container css end here */
+
+
+/* card css here */
+.card{
+    background-color: #ffffff29;
+}
+
+/* text animation css here */
+.animated-text {
+    display:inline-block;
+    vertical-align: bottom;
+  }
+  
+  .animated-text > span {
+    display:grid;
+    overflow: hidden;
+    height:1.2em;
+  }
+  
+  .animated-text span span {
+    width:0%;
+    max-width:max-content;
+    overflow: hidden;
+    height:inherit;
+    word-break:break-all;
+    animation:
+      c 0.5s infinite steps(1),  
+      t 2s linear infinite alternate,
+      m 12s steps(3) infinite;
+      -webkit-text-stroke: 1px var(--primary-color);
+    color: var(--black);
+  }
+  .animated-text span span:before {
+    content:" ";
+    display:inline-block;
+  }
+  
+  @keyframes t{
+    90%,100% {width:100%}
+  }
+  
+  @keyframes c{
+    0%,100%{box-shadow:2px 0 0 var(--black)0}
+    50%    {box-shadow:2px 0 0 var(--white)  }
+  }
+  
+  @keyframes m{
+    100% {transform:translateY(-300%)}
+  }
+  
+
+/* timeline css start here */
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+.timeline-container h4{margin-bottom: 1.5rem;}
+.timeline-container .degree-name{margin-bottom: 4px;}
+.timeline-container .location{margin-bottom: 0;}
+.timeline-container .location,
+.timeline-container .degree-name{
+    font-size: 14px;
+}
+.timeline-container .degree-name span{
+    color: var(--primary-color);
+}
+.timeline-container .location span{
+    color: #BCC7D7;
+}
+/* The circles on the timeline */
+.timeline-container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: var(--white);
+  border: 4px solid var(--primary-color);
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -13px;
+}
+
+section#skills .skill-name{
+    color: var(--white);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.progress{height: 6px;}
+.progress-bar{
+    background: linear-gradient(45deg, var(--black)000, rgb(224, 86, 253));
+}
+
+
+/* circle progress bar */
+.progress-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.progress-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--primary-color) 0% 75%, /* Default Progress Color */
+    #d3d3d3 75% 100% /* Background Color */
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--black);
+  font-weight: bold;
+  position: relative;
+}
+
+.progress-circle::before {
+  content: '';
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #ffffff;
+  position: absolute;
+}
+
+.progress-circle span {
+  position: relative;
+}
+
+/* form css here */
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-group .form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  background-color: var(--black);
+  color: var(--white);
+}
+.form-group .form-label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 14px;
+  color: #777;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+.form-group .form-control:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+.form-group .form-control:focus + .form-label,
+.form-group .form-control:not(:placeholder-shown) + .form-label {
+  top: -6px;
+  font-size: 12px;
+  color: var(--primary-color);
+  background-color: var(--black);
+  padding: 0 4px;
+  border-radius: 4px;
+  left: 8px;
+}
+
+
+/* Media queries - Responsive css here */
+
+@media screen and (max-width: 991px){
+
+  .image-container{
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 767px){
+  body{padding-top: 75px;}
+  .toggle-btn {
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .custom-nav .nav {
+    position: fixed;
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    top: 62px;
+    background: var(--black);
+    width: 250px;
+    height: 100%;
+    transition: all .5s ease-in;
+    padding: 0 16px;
+  }
+  .custom-nav.navbar ul > li > a{display: inline-block;}
+  .custom-nav .nav.close{
+    right: 0;
+  }
+  section{padding-bottom: 20px;}
+  
+}
+
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+/* end here */
+
+
