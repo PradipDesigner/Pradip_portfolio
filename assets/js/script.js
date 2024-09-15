@@ -8,15 +8,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-function confirmRedirect() {
-  if (
-    confirm(
-      "Sorry currently form not acceptable.\nplease click OK Button you redirect to our WhatsApp."
-    )
-  ) {
-    window.location.href = "https://wa.me/9111514114";
-  }
-}
 
 function calculateExperience(startDate) {
   const start = new Date(startDate);
