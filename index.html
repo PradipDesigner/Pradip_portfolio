@@ -266,20 +266,20 @@
       <form action="https://api.web3forms.com/submit" method="POST" class="form-container">
         <input type="hidden" name="access_key" value="e521ace0-fe02-4411-a363-449b959a180f">
         <div class="form-group">
-          <input type="text" name="name" class="form-control" placeholder=" " id="name">
-          <label class="form-label" for="name">Full Name</label>
+          <input type="text" name="name" class="form-control" placeholder=" " id="name" required>
+          <label class="form-label" for="name">Full Name <strong class="text-danger">*</strong></label>
         </div>
         <div class="form-group">
           <input type="email" name="email" class="form-control" placeholder=" " id="inputField">
           <label class="form-label" for="inputField">Email Address</label>
         </div>
         <div class="form-group">
-          <input type="number" name="mobile" class="form-control" placeholder=" " id="number">
-          <label class="form-label" for="number">Phone</label>
+          <input type="number" name="mobile" class="form-control" placeholder=" " id="number" required>
+          <label class="form-label" for="number">Mobile <strong class="text-danger">*</strong></label>
         </div>
         <div class="form-group">
-          <textarea name="message" class="form-control" placeholder=" " rows="5" id="message"></textarea>
-          <label class="form-label" for="message">Message</label>
+          <textarea name="message" class="form-control" placeholder=" " rows="5" id="message" required></textarea>
+          <label class="form-label" for="message">Message <strong class="text-danger">*</strong></label>
         </div>
         <button class="btn btn-primary1" type="submit">Submit</button>
       </form>
