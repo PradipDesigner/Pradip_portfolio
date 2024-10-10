@@ -1,8 +1,14 @@
-:root{
-    --primary-color: #e056fd;
-    --primary-color-hover: #ae07cf;
-    --white: #fff;
-    --black: #000;
+:root {
+  --primary-color: #e056fd;
+  --primary-color-hover: #ae07cf;
+  --white: #fff;
+  --black: #000;
+}
+.link{
+  color: var(--primary-color) !important;
+}
+.link:hover{
+  color: var(--primary-color-hover) !important;
 }
 body {
   box-sizing: border-box;
@@ -43,7 +49,9 @@ body {
 }
 
 /* common css here */
-.fs-14{font-size: 14px;}
+.fs-14 {
+  font-size: 14px;
+}
 
 /* navbar css start here */
 .custom-nav {
@@ -54,8 +62,8 @@ body {
   z-index: 999;
   background-color: var(--black);
 }
-.custom-nav.scrolled{
-    border-bottom: 1px solid var(--primary-color);
+.custom-nav.scrolled {
+  border-bottom: 1px solid var(--primary-color);
 }
 a.navbar-brand {
   color: var(--white);
@@ -92,8 +100,12 @@ a.navbar-brand {
   background-color: transparent;
 }
 
-.toggle-btn{display: none;}
-.bar1, .bar2, .bar3 {
+.toggle-btn {
+  display: none;
+}
+.bar1,
+.bar2,
+.bar3 {
   width: 30px;
   height: 3px;
   background-color: var(--white);
@@ -105,7 +117,9 @@ a.navbar-brand {
   transform: translate(0, 7px) rotate(-45deg);
 }
 
-.change .bar2 {opacity: 0;}
+.change .bar2 {
+  opacity: 0;
+}
 
 .change .bar3 {
   transform: translate(0, -11px) rotate(45deg);
@@ -118,29 +132,28 @@ section {
   padding-top: 40px;
   padding-bottom: 40px;
 }
-section h1{
-    text-shadow: 2px 1px var(--primary-color);
+section h1 {
+  text-shadow: 2px 1px var(--primary-color);
 }
 section h2 {
   margin-bottom: 1rem;
 }
-section h2 span{
-    color: var(--primary-color);
+section h2 span {
+  color: var(--primary-color);
 }
 /* section css end here */
-
 
 /* image container css start here */
 .image-container {
   width: 400px;
   height: 400px;
-  background: linear-gradient(45deg, var(--black)000, rgb(224, 86, 253));
+  background: linear-gradient(45deg, var(--black) 000, rgb(224, 86, 253));
   border: 2px solid rgb(224, 86, 253);
   border-radius: 100%;
   margin: auto;
   /* box-shadow: rgba(224, 86, 253, 0.5) 0px 50px 100px -20px,
     rgba(224, 86, 253, 0.3) 0px 30px 60px -30px; */
-    box-shadow: 5px 5px 100px 0px var(--primary-color-hover);
+  box-shadow: 5px 5px 100px 0px var(--primary-color-hover);
   overflow: hidden;
 }
 .image-container img {
@@ -152,55 +165,81 @@ section h2 span{
 }
 /* image container css end here */
 
-
 /* card css here */
-.card{
-    background-color: #ffffff29;
+.card {
+  background-color: #ffffff29;
 }
+.card.work-card{
+  overflow: hidden;
+  cursor: pointer;
+}
+.content-overlay {
+  position: absolute;
+  background-color: #0009;
+  bottom: -100%;
+  padding: 12px;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  transition: ease-in-out .5s;
+}
+.card.work-card:hover .content-overlay{
+  bottom: 0;
+}
+/* .content-overlay{
 
+} */
 /* text animation css here */
 .animated-text {
-    display:inline-block;
-    vertical-align: bottom;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.animated-text > span {
+  display: grid;
+  overflow: hidden;
+  height: 1.2em;
+}
+
+.animated-text span span {
+  width: 0%;
+  max-width: max-content;
+  overflow: hidden;
+  height: inherit;
+  word-break: break-all;
+  animation: c 0.5s infinite steps(1), t 2s linear infinite alternate,
+    m 12s steps(3) infinite;
+  -webkit-text-stroke: 1px var(--primary-color);
+  color: var(--black);
+}
+.animated-text span span:before {
+  content: " ";
+  display: inline-block;
+}
+
+@keyframes t {
+  90%,
+  100% {
+    width: 100%;
   }
-  
-  .animated-text > span {
-    display:grid;
-    overflow: hidden;
-    height:1.2em;
+}
+
+@keyframes c {
+  0%,
+  100% {
+    box-shadow: 2px 0 0 var(--black) 0;
   }
-  
-  .animated-text span span {
-    width:0%;
-    max-width:max-content;
-    overflow: hidden;
-    height:inherit;
-    word-break:break-all;
-    animation:
-      c 0.5s infinite steps(1),  
-      t 2s linear infinite alternate,
-      m 12s steps(3) infinite;
-      -webkit-text-stroke: 1px var(--primary-color);
-    color: var(--black);
+  50% {
+    box-shadow: 2px 0 0 var(--white);
   }
-  .animated-text span span:before {
-    content:" ";
-    display:inline-block;
+}
+
+@keyframes m {
+  100% {
+    transform: translateY(-300%);
   }
-  
-  @keyframes t{
-    90%,100% {width:100%}
-  }
-  
-  @keyframes c{
-    0%,100%{box-shadow:2px 0 0 var(--black)0}
-    50%    {box-shadow:2px 0 0 var(--white)  }
-  }
-  
-  @keyframes m{
-    100% {transform:translateY(-300%)}
-  }
-  
+}
 
 /* timeline css start here */
 /* The actual timeline (the vertical ruler) */
@@ -229,18 +268,24 @@ section h2 span{
   background-color: inherit;
   width: 50%;
 }
-.timeline-container h4{margin-bottom: 1.5rem;}
-.timeline-container .degree-name{margin-bottom: 4px;}
-.timeline-container .location{margin-bottom: 0;}
+.timeline-container h4 {
+  margin-bottom: 1.5rem;
+}
+.timeline-container .degree-name {
+  margin-bottom: 4px;
+}
+.timeline-container .location {
+  margin-bottom: 0;
+}
 .timeline-container .location,
-.timeline-container .degree-name{
-    font-size: 14px;
+.timeline-container .degree-name {
+  font-size: 14px;
 }
-.timeline-container .degree-name span{
-    color: var(--primary-color);
+.timeline-container .degree-name span {
+  color: var(--primary-color);
 }
-.timeline-container .location span{
-    color: #BCC7D7;
+.timeline-container .location span {
+  color: #bcc7d7;
 }
 /* The circles on the timeline */
 .timeline-container::after {
@@ -274,10 +319,10 @@ section h2 span{
   top: 22px;
   width: 0;
   z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
+  right: 22px;
+  border: medium solid #ffffff29;
+  border-width: 18px 0 18px 18px;
+  border-color: transparent transparent transparent #ffffff29;
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -288,10 +333,10 @@ section h2 span{
   top: 22px;
   width: 0;
   z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
+  left: 22px;
+  border: medium solid #ffffff29;
+  border-width: 18px 18px 18px 0;
+  border-color: transparent #ffffff29 transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -299,16 +344,17 @@ section h2 span{
   left: -13px;
 }
 
-section#skills .skill-name{
-    color: var(--white);
-    font-size: 14px;
-    margin-bottom: 4px;
+section#skills .skill-name {
+  color: var(--white);
+  font-size: 14px;
+  margin-bottom: 4px;
 }
-.progress{height: 6px;}
-.progress-bar{
-    background: linear-gradient(45deg, var(--black)000, rgb(224, 86, 253));
+.progress {
+  height: 6px;
 }
-
+.progress-bar {
+  background: linear-gradient(45deg, var(--black) 000, rgb(224, 86, 253));
+}
 
 /* circle progress bar */
 .progress-container {
@@ -322,8 +368,8 @@ section#skills .skill-name{
   height: 100px;
   border-radius: 50%;
   background: conic-gradient(
-    var(--primary-color) 0% 75%, /* Default Progress Color */
-    #d3d3d3 75% 100% /* Background Color */
+    var(--primary-color) 0% 75%,
+    /* Default Progress Color */ #d3d3d3 75% 100% /* Background Color */
   );
   display: flex;
   justify-content: center;
@@ -335,7 +381,7 @@ section#skills .skill-name{
 }
 
 .progress-circle::before {
-  content: '';
+  content: "";
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -386,18 +432,18 @@ section#skills .skill-name{
   left: 8px;
 }
 
-
 /* Media queries - Responsive css here */
 
-@media screen and (max-width: 991px){
-
-  .image-container{
+@media screen and (max-width: 991px) {
+  .image-container {
     width: 300px;
     height: 300px;
   }
 }
-@media screen and (max-width: 767px){
-  body{padding-top: 75px;}
+@media screen and (max-width: 767px) {
+  body {
+    padding-top: 75px;
+  }
   .toggle-btn {
     display: inline-block;
     cursor: pointer;
@@ -412,15 +458,18 @@ section#skills .skill-name{
     background: var(--black);
     width: 250px;
     height: 100%;
-    transition: all .5s ease-in;
+    transition: all 0.5s ease-in;
     padding: 0 16px;
   }
-  .custom-nav.navbar ul > li > a{display: inline-block;}
-  .custom-nav .nav.close{
+  .custom-nav.navbar ul > li > a {
+    display: inline-block;
+  }
+  .custom-nav .nav.close {
     right: 0;
   }
-  section{padding-bottom: 20px;}
-  
+  section {
+    padding-bottom: 20px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -438,10 +487,10 @@ section#skills .skill-name{
 
   /* Make sure that all arrows are pointing leftwards */
   .timeline-container::before {
-    left: 60px;
-    border: medium solid white;
-    border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    left: 53px;
+    border: medium solid #ffffff29;
+    border-width: 18px 18px 18px 0;
+    border-color: transparent #ffffff29 transparent transparent;
   }
 
   /* Make sure all circles are at the same spot */
@@ -455,8 +504,13 @@ section#skills .skill-name{
     left: 0%;
   }
 
-  section h2,a.navbar-brand{font-size: 18px;}
+  section h2,
+  a.navbar-brand {
+    font-size: 18px;
+  }
+
+  .content-overlay {
+    height: 100%;
+  }
 }
 /* end here */
-
-
