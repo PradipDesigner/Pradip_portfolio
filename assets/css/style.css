@@ -187,9 +187,10 @@ section h2 span {
 .card.work-card:hover .content-overlay{
   bottom: 0;
 }
-/* .content-overlay{
-
-} */
+.content-overlay p{
+  font-size: 14px;
+  margin: 0;
+}
 /* text animation css here */
 .animated-text {
   display: inline-block;
